@@ -1,0 +1,236 @@
+Ques1/ What's better CSS or bootstrap? whats the difference between css grid vs flexbox vs bootstrap
+
+Ans/ CSS and Bootstrap have there own merits and both of them are useful for a web developer
+     Bootstrap was just developed to make the designing portion much easier for the web developers.
+     If we are learning web designing and development , then firstly we should practice CSS as much as
+     we can,if you are really fond of understanding and learning web development.
+
+     if our projects requires to have an excellent and unique interface, it is recommended to use css.
+     With CSS we can make customised websites.
+
+     “Bootstrap is just like the machines that makes the humans life much more comfortable and reduces 
+     the human effort, that we might put in while using CSS. ”
+    
+    -------------------------------------------------
+     Difference CSS grid vs css flexbox vs bootstrap
+    -------------------------------------------------
+
+    CSS Grid => * Grid is made for two dimensional layouts. That is we can align components into columns and rows.
+
+    CSS Flexbox => * Flexbox is made for one dimensional layouts.components can be placed only in one axis.
+                     With Flexbox, we can create multi-line flex containers by applying apply flex-wrap property 
+
+    bootstrap => * Bootstrap is a CSS framework used to design webpages with support of responsive layouts.
+                 * With Bootstrap, we can create a grid using only HTML. With Flexbox, we must use HTML and CSS.
+                 * Bootstrap has a twelve-column system, which means that there can be up to 12 grid columns on a 
+                   single horizontal block.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Ques2/ Is there any difference between window and document?
+
+Ans/ Yes, in the following way they are different:-
+     Window object : It is the top most object and outermost element of the object hierarchy
+     Document object : Each HTML document that gets loaded into a window becomes a document object. The document contains
+     the contents of the page. Using document object, JavaScript can modify, add and delete the HTML elements, attributes 
+     CSS styles in the 
+     The window object represents a window/tab containing a DOM document where as document object is property of window 
+     object that points to the DOM document loaded in that window.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Ques3/What are the different ways to get an element from DOM?
+
+Ans/ Ways of getting element from DOM are:
+     => Two methods from DOM standard are,
+       i) The getElementById() 
+       ii) getElementsByTagName() 
+     => HTML5 specification adds three new methods for accessing elements,
+       i) getElementsByClassName()
+      ii) querySelector()
+     iii) and querySelectorAll().
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ Ques4/ How to serve html in multiple languages?
+
+ Ans/  i) We can set the language in the HTML document by setting the lang attribute in the code. By default, the specified
+          language is English, but it can be changed at our convenience.
+          By default:
+             <html lang="en">
+          To change the language, just simply set the lang attribute.
+             <p> French " <span lang="fr"> Bonjour </span> " </p>
+          the second approach, we will use the google translate API reference & will add this API to our Html code.   
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Ques5/ What are the differences between for...of and for...in statements?
+
+Ans/  for..in and for..of are looping constructs which are used to iterate over data structures
+      Difference between them is:
+      i) for (..in) loop: The JavaScript for (..in) statement loops through the enumerable properties of an object. The loop will
+         iterate over all enumerable properties of the object itself and those the object inherits from its constructor’s prototype.
+      ii) for (..of) loop: This for (..of) statement lets you loop over the data structures that are iterable such as Arrays, Strings,
+          Maps, Node Lists, etc
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Ques6/ Q6 What will you see in the console for the following example?
+            var a = 1;
+            function b() {
+            a = 10;   
+            return;
+            function a() {}
+            }
+            b();
+            console.log(a);
+
+
+Ans6 /   The console show output as 1 for the above code. Scoping and hoisting is applied here. Due to the the presence 
+             of function a , the scope of a is inside the function b defer from the global scope and converted into local scope. So
+             the value of a will be in functional scope inside function b. So when we print the value of a outside function b. It 
+             fetch data from the global scope and print 1.
+----------------------------------------------------------------------------------------------------------------------------------------------
+Ques7/- Look at the code below, you have a for loop if you have setTimeout inside it. If log the loop counter 
+        inside setTimeout, what will be logged?
+         for(var i = 0; i < 10; i++) {
+         setTimeout(function() {
+         console.log(i); 
+         }, 10);
+       }
+
+
+Ans7/- Here output will be 10 times 10 on the console since var is having global scope. It will re-assign the value 
+       of i for every iteration of setTimeout and get stored in callback Queue. With the termination of for loop, 
+       callback queue is having 10 times 10 that is line up to get pushed on callStack and then pop out one by one
+       giving the output as 10 times 10.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Ques8/  Look at the code below, I have a property in a object and I am creating a new object where I am setting
+        it to a new value. If I delete that property what will i get if I try to access that property?
+            var myObject = {
+            price: 20.99,
+            get_price : function() {
+            return this.price;
+              }
+            };
+            var customObject = Object.create(myObject);
+            customObject.price = 19.99;
+            delete customObject.price;
+            console.log(customObject.get_price());
+
+
+Ans8/    customObject gives the value as 20.99. Which is the property of myObject. The reason being customObject is 
+         formed using Object.create(myObject) which makes it to inherit prototype of myObject. So on deleting 
+         customObject.price it is deleting price of its own scope. After deletion its will search the price in the 
+         prototype of myObject(as it inherit the properties of myObject). On calling the function customObject.get_price(),
+         it will get the value of the parents object that is 20.99.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Ques9. Input has 2 JSON State with District info and CovidCases for each District. Take these two JSON as input 
+       and make a final output JSON will be tell us State with covid cases count.
+         Input:
+               state = {
+               "Maharashtra" : "Pune",
+               "Karnataka" : "Bangalore",
+               "Andra Pradesh" : "Vijaywada",
+               "Kerala": "Palakkad"
+               }
+               covidCases = {
+               "Pune": 100,
+               "Bangalore": 90,
+               "Vijaywada": 92,
+               "Palakkad": 300
+               }
+               Output:
+               finalResult = {
+               "Maharashtra" : 100,
+               "Karnataka" : 90,
+               "Andra Pradesh" : 92,
+               "Kerala" : 300
+         }
+            
+         
+Ans9/     state = {
+               "Maharashtra" : "Pune",
+               "Karnataka" : "Bangalore",
+               "Andra Pradesh" : "Vijaywada",
+               "Kerala": "Palakkad"
+               }
+               covidCases = {
+               "Pune": 100,
+               "Bangalore": 90,
+               "Vijaywada": 92,
+               "Palakkad": 300
+               }
+
+               let y = Object.entries(state);
+               console.log(y);
+               let z = Object.entries(covidCases);
+               console.log(z);
+               let obj = new Object();
+               for(let i=0;i<y.length;i++){
+                    let k = y[i][0];
+                    let c = y[i][1];
+                    for(let j=0;j<z.length;j++){
+                        if(c == z[j][0]){
+                             obj[k]=z[j][1];
+                            // console.log(k,z[j][1])
+                        }
+                    }
+                 }
+               console.log(obj);
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Ques10/ Write a code to show your "Name" "Qualification" "Place" in TABULAR format in the centre of screen and
+        with the click of button it should clear of the content.
+
+
+Ans 10/ <!DOCTYPE html>
+     <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>table</title>
+          <style>
+              #tab{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+              }
+          </style>
+      </head>
+      <body>
+
+          <div id="tab">
+              <table border="1" cellspacing="5" cellpadding="5px">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Qualification</th>
+                          <th>Place</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>harry</td>
+                          <td>B.tech</td>
+                          <td>Pune</td>
+                      </tr>
+                      <tr>
+                          <td>Kate</td>
+                          <td>B.ed</td>
+                          <td>Bengalore</td>
+                      </tr>
+                  </tbody>
+              </table>
+              <br>
+              <button id="btn">Click Here</button>
+          </div>
+          <script>
+              document.getElementById("btn").addEventListener('click',function(){
+                // document.getElementsByTagName("td").innerHTML = <h1></h1>
+                  var c=document.querySelectorAll("td");
+                  var len=c.length;
+                  for(let i=0; i<len ;i++){
+                      c[i].outerText="";
+                  }
+              })
+          </script>
+      </body>
+      </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        #tab{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="tab">
+        <table border="1" cellspacing="5" cellpadding="5px">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Qualification</th>
+                    <th>Place</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>harry</td>
+                    <td>B.tech</td>
+                    <td>Pune</td>
+                </tr>
+                <tr>
+                    <td>Kate</td>
+                    <td>B.ed</td>
+                    <td>Bengalore</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button id="btn">Click Here</button>
+    </div>
+    <script>
+        document.getElementById("btn").addEventListener('click',function(){
+           // document.getElementsByTagName("td").innerHTML = <h1></h1>
+            var c=document.querySelectorAll("td");
+            var len=c.length;
+            for(let i=0; i<len ;i++){
+                c[i].outerText="";
+            }
+        })
+    </script>
+</body>
+</html>
