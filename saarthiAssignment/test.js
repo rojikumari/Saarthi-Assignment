@@ -3,7 +3,7 @@
     a = 10;
     return a;
     function a() {
-         shwjjabhjbhjdbhjweejj
+    
      }
     }
     b();
